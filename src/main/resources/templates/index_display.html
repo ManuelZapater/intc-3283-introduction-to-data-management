@@ -20,21 +20,23 @@
             <table class="table table-striped">
                 <thead>
                     <tr>
-                        <th>ID</th>
+                        <th>Id</th>
                         <th>Name</th>
+                        <th>Email</th>
                         <th>Username</th>
-                        <th>Date of Birth (yy/mm/dd)</th>
-                        <th>Share Data</th>
+                        <th>Date of Birth</th>
+                        <th>Share Data?</th>
                     </tr>
                 </thead>
 
                 <tbody>
                     <tr th:each="entry : ${entries}">
-                        <td th:text="${entry.getId()}">ID goes here</td>
-                        <td th:text="${entry.getName()}">NAME goes here</td>
-                        <td th:text="${entry.getUsername}">USERNAME goes here</td>
-                        <td th:text="${entry.getDateOfBirth()}">DATE OF BIRTH goes here</td>
-                        <td th:text="${entry.isShareData()}">SHARE DATA goes here</td>
+                        <td th:text="${entry.getId()}">#</td>
+                        <td th:text="${entry.getName()}">NAME</td>
+                        <td th:text="${entry.getEmail()}">@</td>
+                        <td th:text="${entry.getUsername}">USERNAME</td>
+                        <td th:text="${entry.getDateOfBirth()}">mm/dd/yyyy</td>
+                        <td th:text="${entry.isShareData()}">YES / NO</td>
                     </tr>
                 </tbody>
             </table>
