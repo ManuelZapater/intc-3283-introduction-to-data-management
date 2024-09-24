@@ -21,10 +21,15 @@ public class IndexController {
     }
 
     @GetMapping("/")
-    public String indexAction() {
+    public String indexAction(Model model) {
+        model.addAttribute("entries", this.entryRepository.findAll());
         return "index";
     }
-
+    @GetMapping("/entries")
+    public String indexDisplayAction(Model model) {
+        model.addAttribute("entries", this.entryRepository.findAll());
+        return "index_display";
+    }
 
     @GetMapping("/entries/new")
     public String indexAction(final @ModelAttribute("entry") Entry input,
